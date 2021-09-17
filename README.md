@@ -6,12 +6,12 @@ The files in this repository were used to configure the network depicted below.
 
 ![TODO: Update the path with the name of your diagram](Images/diagram_filename.png)
 
-These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the _____ file may be used to install only certain pieces of it, such as Filebeat.
+These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the _YAML_ file may be used to install only certain pieces of it, such as Filebeat.
 
   - _TODO: Enter the playbook file._
 
 This document contains the following details:
-- Description of the Topologu
+- Description of the Topology
 - Access Policies
 - ELK Configuration
   - Beats in Use
@@ -23,22 +23,22 @@ This document contains the following details:
 
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
-Load balancing ensures that the application will be highly _____, in addition to restricting _____ to the network.
-- _TODO: What aspect of security do load balancers protect? What is the advantage of a jump box?_
+Load balancing ensures that the application will be highly _available_, in addition to restricting _traffic_ to the network.
+- _TODO: What aspect of security do load balancers protect? The advantage of a Jump Box is it focuses traffic through a single node. In turn, by securing and monitoring this single node, it is much easier than securing and monitoring each individual VM behind the gateway._
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the _machine_ and system _file_.
-- _TODO: What does Filebeat watch for?_
-- _TODO: What does Metricbeat record?_
+- _Filebeat helps generate and organize log files to send to Logstash and Elasticsearch. Specifically, it logs information about the file system, including which files have changed and when._
+- _Metricbeat collects machine metrics, such as uptime._
 
 The configuration details of each machine may be found below.
 _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
 
 | Name     | Function | IP Address | Operating System |
 |----------|----------|------------|------------------|
-| Jump Box | Gateway  | 10.0.0.1   | Linux            |
-| TODO     |          |            |                  |
-| TODO     |          |            |                  |
-| TODO     |          |            |                  |
+| Jump Box | Gateway  | 10.0.0.1   | Ubuntu 18.04     |
+| Web-1    | Web Serv | 10.0.0.5   | Ubuntu 18.04     |
+| Web-2    | Web Serv | 10.0.0.6   | Ubuntu 18.04     |
+| ELKServ  |          | 10.1.0.4   | Ubuntu 18.04     |
 
 ### Access Policies
 
