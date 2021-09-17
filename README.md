@@ -24,7 +24,8 @@ This document contains the following details:
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
 Load balancing ensures that the application will be highly _available_, in addition to restricting _traffic_ to the network.
-- _TODO: What aspect of security do load balancers protect? The advantage of a Jump Box is it focuses traffic through a single node. In turn, by securing and monitoring this single node, it is much easier than securing and monitoring each individual VM behind the gateway._
+- _What aspect of security do load balancers protect? A load balancer defends an organization against distributed denial-of-service (DDoS) attacks._ 
+- _What is the advantage of a jump box? The advantage of a Jump Box is it focuses traffic through a single node. In turn, by securing and monitoring this single node, it is much easier than securing and monitoring each individual VM behind the gateway._
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the _machine_ and system _file_.
 - _Filebeat helps generate and organize log files to send to Logstash and Elasticsearch. Specifically, it logs information about the file system, including which files have changed and when._
@@ -36,27 +37,28 @@ _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdow
 | Name     | Function | IP Address | Operating System |
 |----------|----------|------------|------------------|
 | Jump Box | Gateway  | 10.0.0.1   | Ubuntu 18.04     |
-| Web-1    | Web Serv | 10.0.0.5   | Ubuntu 18.04     |
-| Web-2    | Web Serv | 10.0.0.6   | Ubuntu 18.04     |
-| ELKServ  |          | 10.1.0.4   | Ubuntu 18.04     |
+| Web-1    | Server   | 10.0.0.5   | Ubuntu 18.04     |
+| Web-2    | Server   | 10.0.0.6   | Ubuntu 18.04     |
+| ELKServ  | Server   | 10.1.0.4   | Ubuntu 18.04     |
 
 ### Access Policies
 
 The machines on the internal network are not exposed to the public Internet. 
 
-Only the _____ machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
-- _TODO: Add whitelisted IP addresses_
+Only the _Jump Box_ machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
+- _76.31.87.95_
 
-Machines within the network can only be accessed by _____.
+Machines within the network can only be accessed by _Jump Box VM_.
 - _TODO: Which machine did you allow to access your ELK VM? What was its IP address?_
 
 A summary of the access policies in place can be found in the table below.
 
 | Name     | Publicly Accessible | Allowed IP Addresses |
 |----------|---------------------|----------------------|
-| Jump Box | Yes/No              | 10.0.0.1 10.0.0.2    |
-|          |                     |                      |
-|          |                     |                      |
+| Jump Box | Yes                 | 76.31.87.95          |
+| Web-1    | No                  | 10.0.0.4             |
+| Web-2    | No                  | 10.0.0.4             |
+| ELKServ  | No                  | 10.0.0.4             |
 
 ### Elk Configuration
 
