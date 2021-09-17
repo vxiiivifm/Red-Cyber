@@ -74,7 +74,7 @@ The following screenshot displays the result of running `docker ps` after succes
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
-- _Web-1 and Web-2 Public IP address: 13.88.102.68
+- Web-1 and Web-2 Public IP address: 13.88.102.68
 - _Web-1 Private IP address: 10.0.0.5_
 - _Web-2 Pribate IP address: 10.0.0.6_
 
