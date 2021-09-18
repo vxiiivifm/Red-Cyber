@@ -45,11 +45,11 @@ _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdow
 
 The machines on the internal network are not exposed to the public Internet. 
 
-Only the _Jump Box_ machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
+Only the _Jump Box and ELKServ_ machine can accept connections from the Internet. Access to these machines is only allowed from the following IP addresses:
 - _76.31.87.95_
 
 Machines within the network can only be accessed by _Jump Box VM_.
-- _TODO: Which machine did you allow to access your ELK VM? What was its IP address?_
+- _Jump Box VM; IP Address 10.0.0.4_
 
 A summary of the access policies in place can be found in the table below.
 
@@ -58,7 +58,7 @@ A summary of the access policies in place can be found in the table below.
 | Jump Box | Yes                 | 76.31.87.95          |
 | Web-1    | No                  | 10.0.0.4             |
 | Web-2    | No                  | 10.0.0.4             |
-| ELKServ  | Yes                 | 10.0.0.4 76.31.87.95 |
+| ELKServ  | Yes                 | 10.0.0.4  76.31.87.95|
 
 ### Elk Configuration
 
