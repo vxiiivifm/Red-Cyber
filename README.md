@@ -110,8 +110,8 @@ These Beats allow us to collect the following information from each machine:
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
-- Copy the _filebeat-config.yml_ file to _your Web VMs at /etc/filebeat/filebeat.yml_.
-- Update the _hosts_ file to include _the elk group._
+- Copy the _`filebeat-config.yml`_ file to _your Web VMs at `/etc/filebeat/filebeat.yml`_.
+- Update the _`hosts`_ file to include _the `[elk]` group._
 - Run the playbook, and navigate to _`http://[your.VM.IP]:5601/app/kibana`_ to check that the installation worked as expected.
 
 _TODO: Answer the following questions to fill in the blanks:_
