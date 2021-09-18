@@ -49,7 +49,7 @@ Only the _Jump Box and ELKServ_ machine can accept connections from the Internet
 - _76.31.87.95_
 
 Machines within the network can only be accessed by _Jump Box VM_.
-- _Jump Box VM; IP Address 10.0.0.4_
+- _Jump Box VM: IP Address 10.0.0.4_
 
 A summary of the access policies in place can be found in the table below.
 
@@ -58,7 +58,7 @@ A summary of the access policies in place can be found in the table below.
 | Jump Box | Yes                 | 76.31.87.95          |
 | Web-1    | No                  | 10.0.0.4             |
 | Web-2    | No                  | 10.0.0.4             |
-| ELKServ  | Yes                 | 10.0.0.4  76.31.87.95|
+| ELKServ  | Yes                 | 10.0.0.4 76.31.87.95 |
 
 ### Elk Configuration
 
@@ -104,7 +104,8 @@ We have installed the following Beats on these machines:
 - _Filebeat and Metricbeat_
 
 These Beats allow us to collect the following information from each machine:
-- _TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
+- _`Filebeat` collects data about the file system._
+- _`Metricbeat` collects data about the machine metrics._
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
