@@ -123,6 +123,7 @@ These are the commands to run for downloading the playbook, update the files, et
   - name: install filebeat deb
     command: `dpkg -i filebeat-7.4.0-amd64.deb`
 
+Use the Ansible `copy` module to move filebeat-config.yml onto the Web VMs.
   - name: drop in filebeat.yml
     copy:
       src: /etc/ansible/filebeat-config.yml
@@ -137,6 +138,7 @@ These are the commands to run for downloading the playbook, update the files, et
   - name: start filebeat service
     command: `service filebeat start`
 
+Use the Ansible module `systemd` to make sure the filebeat service is running.
   - name: enable service filebeat on boot
     systemd:
       name: filebeat
