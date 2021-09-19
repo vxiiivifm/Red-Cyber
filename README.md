@@ -114,14 +114,14 @@ SSH into the control node and follow the steps below:
 - Update the _`hosts`_ file to include _the `[elk]` group. After updating the `hosts` file, create the new Ansible playbook to use for your new ELK virtual machine. The header of the Ansible playbook can specify which group of machines to run the playbook._
 - Run the playbook, and navigate to _`http://[your.VM.IP]:5601/app/kibana`_ to check that the installation worked as expected.
 
-# Commands
+### Commands
 These are the commands to run for downloading the playbook, update the files, etc. 
 
   - name: download filebeat deb
-    command: curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-7.4.0-amd64.deb
+    command: `curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-7.4.0-amd64.deb`
 
   - name: install filebeat deb
-    command: dpkg -i filebeat-7.4.0-amd64.deb
+    command: `dpkg -i filebeat-7.4.0-amd64.deb`
 
   - name: drop in filebeat.yml
     copy:
@@ -129,13 +129,13 @@ These are the commands to run for downloading the playbook, update the files, et
       dest: /etc/filebeat/filebeat.yml
 
   - name: enable and configure system module
-    command: filebeat modules enable system
+    command: `filebeat modules enable system`
 
   - name: setup filebeat
-    command: filebeat setup
+    command: `filebeat setup`
 
   - name: start filebeat service
-    command: service filebeat start
+    command: `service filebeat start`
 
   - name: enable service filebeat on boot
     systemd:
