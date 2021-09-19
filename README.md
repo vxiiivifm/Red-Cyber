@@ -117,33 +117,34 @@ SSH into the control node and follow the steps below:
 ### Commands
 These are the commands to run for downloading the playbook, update the files, etc. 
 
-  - name: download filebeat deb
-    command: `curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-7.4.0-amd64.deb`
+  - command: `curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-7.4.0-amd64.deb`
 
-  - name: install filebeat deb
-    command: `dpkg -i filebeat-7.4.0-amd64.deb`
+  - command: `sudo dpkg -i filebeat-7.4.0-amd64.deb`
 
-Use the Ansible `copy` module to move filebeat-config.yml onto the Web VMs.
-  - name: drop in filebeat.yml
-    copy:
-      src: /etc/ansible/filebeat-config.yml
-      dest: /etc/filebeat/filebeat.yml
+Modify `/etc/filebeat/filebeat.yml` to set the connection information:
+```
+output.elasticsearch:
+  hosts: ["<es_url>"]
+  username: "elastic"
+  password: "<password>"
+setup.kibana:
+  host: "<kibana_url>"
+```
+Where `<password>` is the password of the elastic user, `<es_url>` is the URL of Elasticsearch, and `<kibana_url>` is the URL of Kibana.
 
-  - name: enable and configure system module
-    command: `filebeat modules enable system`
+  - command: `sudo filebeat modules enable system`
+	- Modify the settings in the /etc/filebeat/modules.d/system.yml file.
 
-  - name: setup filebeat
-    command: `filebeat setup`
+  - command: `sudo filebeat setup`
+	- The `setup` command loads the Kibana dashboards. If the dashboards are already set up, omit this command.
 
-  - name: start filebeat service
-    command: `service filebeat start`
+  - command: `sudo service filebeat start`
 
 Use the Ansible module `systemd` to make sure the filebeat service is running.
+```
   - name: enable service filebeat on boot
     systemd:
       name: filebeat
       enabled: yes
+```
 
- 
-
-_As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
