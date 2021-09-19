@@ -120,7 +120,7 @@ These are the commands to run for downloading the playbook, update the files, et
   - command: `curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-7.4.0-amd64.deb`
 
   - command: `sudo dpkg -i filebeat-7.4.0-amd64.deb`
-
+---
 Modify `/etc/filebeat/filebeat.yml` to set the connection information:
 ```
 output.elasticsearch:
@@ -131,7 +131,7 @@ setup.kibana:
   host: "<kibana_url>"
 ```
 Where `<password>` is the password of the elastic user, `<es_url>` is the URL of Elasticsearch, and `<kibana_url>` is the URL of Kibana.
-
+---
   - command: `sudo filebeat modules enable system`
 	- Modify the settings in the /etc/filebeat/modules.d/system.yml file.
 
@@ -139,7 +139,7 @@ Where `<password>` is the password of the elastic user, `<es_url>` is the URL of
 	- The `setup` command loads the Kibana dashboards. If the dashboards are already set up, omit this command.
 
   - command: `sudo service filebeat start`
-
+---
 Use the Ansible module `systemd` to make sure the filebeat service is running.
 ```
   - name: enable service filebeat on boot
