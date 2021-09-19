@@ -35,10 +35,10 @@ The configuration details of each machine may be found below.
 
 | Name     | Function | IP Address | Operating System |
 |----------|----------|------------|------------------|
-| Jump Box | Gateway  | 10.0.0.1   | Ubuntu 18.04     |
-| Web-1    | Web Server| 10.0.0.5  | Ubuntu 18.04     |
-| Web-2    | Web Server| 10.0.0.6  | Ubuntu 18.04     |
-| ELKServ  | ELK Server| 10.1.0.4  | Ubuntu 18.04     |
+| Jump Box | Gateway  | 10.0.0.1   | Linux (Ubuntu 18.04)|
+| Web-1    | Web Server| 10.0.0.5  | Linux (Ubuntu 18.04)|
+| Web-2    | Web Server| 10.0.0.6  | Linux (Ubuntu 18.04)|
+| ELKServ  | ELK Server| 10.1.0.4  | Linux (Ubuntu 18.04)|
 
 ### Access Policies
 
