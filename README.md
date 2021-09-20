@@ -113,6 +113,7 @@ SSH into the control node and follow the steps below:
 - Copy the _`filebeat-config.yml`_ file to _your Web VMs at `/etc/filebeat/filebeat.yml`_.
 - Update the _`hosts`_ file to include _the `[elk]` group. After updating the `hosts` file, create the new Ansible playbook to use for your new ELK virtual machine. The header of the Ansible playbook can specify which group of machines to run the playbook._
 - Run the playbook, and navigate to _`http://[your.VM.IP]:5601/app/kibana`_ to check that the installation worked as expected.
+![Kibana_Home](Images/Kibana_Home.png)
 
 ### Commands
 These are the commands to run for downloading the playbook, update the files, etc. 
